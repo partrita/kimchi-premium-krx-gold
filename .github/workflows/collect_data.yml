@@ -26,7 +26,7 @@ jobs:
       - name: Run web scraper and plot results
         run: |
           uv run python src/kimchi_gold/collect_price.py
-          uv run python src/plot.py
+          uv run python src/kimchi_gold/plot.py
 
       - name: Commit and push changes
         run: |
