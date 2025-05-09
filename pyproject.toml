@@ -1,22 +1,21 @@
 [project]
-name = "kimchi-premium"
+name = "kimchi-gold"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "김탱", email = "deepthought@postech.ac.kr" }
+    { name = "deepthough", email = "deepthought@postech.ac.kr" }
 ]
 requires-python = ">=3.11"
 dependencies = [
-    "click>=8.1.8",
+    "beautifulsoup4>=4.13.4",
     "matplotlib>=3.10.1",
     "pandas>=2.2.3",
-    "python-dotenv>=1.1.0",
     "requests>=2.32.3",
 ]
 
 [project.scripts]
-kimchi-premium = "kimchi_premium.main:main"
+kimchi-gold = "kimchi_gold.main:main"
 
 [build-system]
 requires = ["hatchling"]
