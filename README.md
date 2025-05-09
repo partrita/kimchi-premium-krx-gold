@@ -2,7 +2,7 @@
 
 ![](./data/kimchi_gold_price_recent_12months.png)
 
-This script calculates the Kimchi premium for KRX gold prices.
+The script calculates the Kimchi premium for KRX gold prices.
 
 # 리눅스 서버에서 매일 자동 실행
 

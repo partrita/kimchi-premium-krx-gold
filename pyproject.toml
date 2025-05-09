@@ -1,7 +1,7 @@
 [project]
 name = "kimchi-gold"
 version = "0.1.0"
-description = "Add your description here"
+description = "The script calculates the Kimchi premium for KRX gold prices."
 readme = "README.md"
 authors = [
     { name = "deepthough", email = "deepthought@postech.ac.kr" }
