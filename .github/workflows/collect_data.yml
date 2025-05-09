@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
@@ -25,17 +25,17 @@ jobs:
 
       - name: Run web scraper
         run: uv run python src/kimchi_gold/collect_price.py
-      
+
       - name: Commit and push changes
         run: |
           git config --local user.email "deepthough@postech.ac.kr"
           git config --local user.name "Auto_Scraping"
-          if [ -d data ] && [ "$(ls -A data)" ]; then
-            git add data/
+          git add data/
+          if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update scraped data"
             git push
           else
-            echo "No files to commit in data/. Skipping commit."
+            echo "No changes to commit in data/. Skipping commit."
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
