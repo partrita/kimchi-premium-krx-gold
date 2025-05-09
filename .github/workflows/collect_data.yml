@@ -29,8 +29,13 @@ jobs:
       - name: Commit and push changes
         run: |
           git config --local user.email "deepthough@postech.ac.kr"
-          git config --local user.name "Auto_Scraping" # 커밋에 포함될 이름
-          git add news.json
-          git commit -m "Update scraped data" # 커밋 메세지
+          git config --local user.name "Auto_Scraping"
+          if [ -d data ] && [ "$(ls -A data)" ]; then
+            git add data/
+            git commit -m "Update scraped data"
+            git push
+          else
+            echo "No files to commit in data/. Skipping commit."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
