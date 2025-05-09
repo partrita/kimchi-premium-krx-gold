@@ -23,8 +23,10 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
 
-      - name: Run web scraper
-        run: uv run python src/kimchi_gold/collect_price.py
+      - name: Run web scraper and plot results
+        run: |
+          uv run python src/kimchi_gold/collect_price.py
+          uv run python src/plot.py
 
       - name: Commit and push changes
         run: |
