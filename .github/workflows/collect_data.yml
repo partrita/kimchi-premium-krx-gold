@@ -2,8 +2,8 @@ name: Daily Kimchi Gold Collect
 
 on:
   schedule:
-    # 매일 오전 9시(한국시간, KST=UTC+9) 실행 (UTC 기준 0 0 * * *)
-    - cron: '0 0 * * *'
+    # 매일 오전 90시(한국시간, KST=UTC+9) 실행 (UTC 기준 0 10 * * *)
+    - cron: '0 1 * * *'
   workflow_dispatch:  # 수동 실행도 가능하게 함
 
 jobs:
