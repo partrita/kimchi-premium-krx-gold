@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple
-from now_price import calc_kimchi_premium
+from kimchi_gold.now_price import calc_kimchi_premium
 
 CURRENT_DIR: Path = Path(__file__).resolve().parent
 ROOT_DIR: Path = CURRENT_DIR.parent.parent  # 루트 폴더
@@ -49,8 +49,8 @@ def collect_data() -> None:
         print("오늘 데이터가 이미 존재합니다. 수집을 중단합니다.")
         return
     try:
-        result: Tuple[float, float, float, float, float] = calc_kimchi_premium()
-        domestic, international, usdkrw, diff, premium = result
+        result: Tuple[float, float, float, float, float, float] = calc_kimchi_premium()
+        domestic, international, international_krw_per_g, usdkrw, diff, premium = result
         today: str = datetime.now().strftime("%Y-%m-%d")
         row: List[str] = [
             today,

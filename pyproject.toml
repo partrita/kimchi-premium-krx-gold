@@ -15,8 +15,13 @@ dependencies = [
 ]
 
 [project.scripts]
-kimchi-gold = "kimchi_gold.main:main"
+kimchi-gold = "kimchi_gold.now_price:calc_kimchi_premium"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
